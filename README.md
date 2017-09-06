@@ -19,8 +19,8 @@
  - 21을 넘기면 무조건 패배<br><br>
 
 ### Object <hr>
-#### Card
-##### CardDeck
-##### Player
-##### Rule
-##### Game
+ - Card
+ - CardDeck
+ - Player
+ - Rule
+ - Game
