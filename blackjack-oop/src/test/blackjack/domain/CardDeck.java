@@ -1,31 +1,47 @@
 package test.blackjack.domain;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 
 public class CardDeck {
-	private List<Card> Cards;
+	private Stack<Card> cards;
+	private String[] patterns = {"spade","clover","heart","diamond"};
+	private String[] denominations = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 	
-	public CardDeck() {}
+	public CardDeck() {
+		this.cards = this.generateNewCards();
+		Collections.shuffle(this.cards);
+	}
 
-	
-
-	public List<Card> generateCardDeck() {
-		List<Card> makeNewCards = new ArrayList<Card>();
-		Card card = new Card();
-		for(String pattern : card.getPatterns()) {
-			for(String denomination : card.getDenominations()) {
-				makeNewCards.add(new Card(pattern, denomination));
+	public Stack<Card> generateNewCards() {
+		Stack<Card> newCards = new Stack<>();
+		for(String pattern : patterns) {
+			for(String denomination : denominations) {
+				newCards.push(new Card(pattern, denomination));
 			}
 		}
-		
-		return makeNewCards;
+		return newCards;
 	}
 	
 	public Card drawACard() {
-		Card card = Cards.get(0);
-		Cards.remove(0);
+		Card card = cards.pop();
 		return card;
 	}
 	
+	public List<Card> getCards() {
+		return cards;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		
+		for(Card card : cards) {
+			sb.append("["+card.getPattern()+"_"+card.getDenomination()+"]");
+		}
+		
+		return sb.toString();
+	}
+
 }
