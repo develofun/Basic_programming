@@ -16,7 +16,16 @@ public class GameRule {
 	
 //	승자 결정
 	public Player finalWinner(List<Player> players) {
-		return null;
+		Player highestPlayer = null;
+		int highestPoint = 0;
+		for(Player player : players) {
+			int point = playerPoint(player);
+			if(point > highestPoint) {
+				highestPoint = point;
+				highestPlayer = player;
+			}
+		}
+		return highestPlayer;
 	}
 	
 //	점수 합계 계산

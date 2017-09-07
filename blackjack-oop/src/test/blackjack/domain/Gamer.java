@@ -53,5 +53,12 @@ public class Gamer implements Player{
 	public void changeTheTurnAction() {
 		turnAction = true;
 	}
+
+	@Override
+	public void checkPresentCards() {
+		for(Card card : cards) {
+			System.out.println("["+card.getPattern()+"_"+card.getDenomination()+"]");
+		}
+	}
   
 }

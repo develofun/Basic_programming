@@ -17,4 +17,6 @@ public interface Player {
 	public String getName();
 	
 	public List<Card> getCards();
+	
+	public void checkPresentCards();
 }

@@ -39,4 +39,11 @@ public class Dealer implements Player{
 	public String getName() {
 		return name;
 	}
+
+	@Override
+	public void checkPresentCards() {
+		for(Card card : cards) {
+			System.out.println("["+card.getPattern()+"_"+card.getDenomination()+"]");
+		}
+	}
 }
