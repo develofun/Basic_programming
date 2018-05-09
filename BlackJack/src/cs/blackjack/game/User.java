@@ -8,6 +8,5 @@ public interface User {
 	// 카드 hit/stay
 	boolean isStay();
 	// 카드 소유
-	void receiveCard(Card card);
-		
+	void receiveCard(Card card);		
 }
