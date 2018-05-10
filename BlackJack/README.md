@@ -59,4 +59,36 @@ public interface User {
 </code>
 </pre>
 
+<pre>
+<code>
+public class CardDeck {
+	private Stack<Card> cards;
+
+	public CardDeck() {
+		this.cards = generateCardDeck();
+		Collections.shuffle(this.cards);
+	}
+	
+	private Stack<Card> generateCardDeck() {
+		Stack<Card> newCards = new Stack<>();		
+		return newCards;
+	}
+}
+</code>
+</pre>
+
+<pre>
+<code>
+
+public interface User {
+	// 카드 오픈
+	ArrayList<Card> openCards();
+	// 카드 hit/stay
+	boolean isStay();
+	// 카드 소유
+	void receiveCard(Card card);		
+}
+</code>
+</pre>
+
 

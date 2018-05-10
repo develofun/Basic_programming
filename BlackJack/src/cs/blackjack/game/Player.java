@@ -4,23 +4,30 @@ import java.util.ArrayList;
 
 public class Player implements User{
 	private ArrayList<Card> cards;
+	private boolean turnStatus;
 	
 	@Override
-	public ArrayList<Card> openCards() {
-		// TODO Auto-generated method stub
-		return null;
+	public String openCards() {
+		StringBuffer cardString = new StringBuffer();
+		for(Card card : cards) {
+			cardString.append(card.toString());
+		}		
+		return cardString.toString();
 	}
 
 	@Override
 	public boolean isStay() {
-		// TODO Auto-generated method stub
-		return false;
+		return turnStatus;
 	}
 
 	@Override
 	public void receiveCard(Card card) {
-		// TODO Auto-generated method stub
-		
+		cards.add(card);
+	}
+
+	@Override
+	public void changeTurnStatus() {
+		turnStatus = true;		
 	}
 	
 }
